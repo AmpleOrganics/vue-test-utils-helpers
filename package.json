@@ -1,0 +1,22 @@
+{
+  "name": "vue-test-utils-helpers",
+  "version": "1.0.0",
+  "description": "Helper functions that make unit testing easier for vue components",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "",
+    "build": "babel src --out-dir lib"
+  },
+  "keywords": [
+    "vue",
+    "unit",
+    "test"
+  ],
+  "author": "Gru Sarn <sarngru@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0"
+  }
+}
