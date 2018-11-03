@@ -1,8 +1,8 @@
 {
   "name": "vue-test-utils-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper functions that make unit testing easier for vue components",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "",
     "build": "babel src --out-dir lib"

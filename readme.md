@@ -22,3 +22,13 @@ Mocks Vuex store `actions` and `getters`
 
 `expect(actions.someAction).toHaveBeenCalled()`
 `expect(getters.someGetter).toHaveBeenCalled()`
+
+### toHaveBeenLastCalledWithPayload
+Jest matcher that mathces the payload of last call to a mocked function with the expected payload. Makes it easier to assert on mocked store action.
+
+`expect(actions.someAction).toHaveBeenLastCalledWithPayload(expected)`
+
+### toHaveBeenLastCalledWithPayload
+Jest matcher is similar to `toHaveBeenLastCalledWithPayload` and allows you to pick the index for the call.
+
+`expect(actions.someAction).toHaveBeenNthCalledWithPayload(expected, index)`

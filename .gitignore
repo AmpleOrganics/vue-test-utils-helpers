@@ -1,7 +1,5 @@
 node_modules/
 npm-debug.log
-lib
 coverage/
-lib/
 .DS_Store
 yarn-error.log
