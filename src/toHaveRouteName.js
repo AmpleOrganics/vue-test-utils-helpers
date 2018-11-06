@@ -1,19 +1,21 @@
 function toHaveRouteName(wrapper, expected) {
-    if (!wrapper || !wrapper.vm || !wrapper.vm.$route) {
+    if (!wrapper || !wrapper.vm || !wrapper.vm.$route || !Object.keys(wrapper.vm.$route).includes('name')) {
         throw new Error('wrapper $route is not initialized')
     }
-    const routeName = wrapper.vm.$route.name
-    const pass = wrapper.vm.$route.name === expected
+    const parsedValue = JSON.stringify(wrapper.vm.$route.name)
+    const parsedExpected = JSON.stringify(expected)
+
+    const pass = parsedValue === parsedExpected
     if (pass) {
         return {
             message: () =>
-                `expected ${routeName} not to be ${expected}`,
+                `expected ${parsedValue} not to be ${parsedExpected}`,
             pass: true
         }
     } else {
         return {
             message: () =>
-                `expected ${routeName} to be ${expected}`,
+                `expected ${parsedValue} to be ${parsedExpected}`,
             pass: false
         }
     }

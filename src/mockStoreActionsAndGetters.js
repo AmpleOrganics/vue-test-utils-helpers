@@ -1,6 +1,6 @@
 function mockStoreActionsAndGetters({
     modules: modulesDictionary,
-    mockedGetters = {},
+    mockedGetters,
     jestFn
 }) {
     let actionsDictionary = {}
