@@ -1,4 +1,4 @@
-function toHaveBeenNthCalledWithPayload(actions, expected, index = 0) {
+function toHaveBeenNthCalledWithPayload(actions, expected, index) {
     const parsedValue = JSON.stringify(actions.mock.calls[index][1])
     const parsedExpected = JSON.stringify(expected)
 
