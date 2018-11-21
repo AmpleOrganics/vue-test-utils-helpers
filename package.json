@@ -1,10 +1,11 @@
 {
   "name": "vue-test-utils-helpers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Helper functions that make unit testing easier for vue components",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
+    "lint": "eslint src tests --fix",
     "build": "babel src --out-dir lib"
   },
   "keywords": [
@@ -19,7 +20,14 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
     "regenerator-runtime": "^0.12.1"
   },

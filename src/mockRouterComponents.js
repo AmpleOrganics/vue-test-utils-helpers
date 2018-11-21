@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash.clonedeep'
 
-function mockRouterComponents(routes, dummyComponent = { template: '<p>Foo</p>' }) {
+function mockRouterComponents (routes, dummyComponent = { template: '<p>Foo</p>' }) {
   const routesToClear = cloneDeep(routes)
   routesToClear.forEach(route => {
     route.component = dummyComponent

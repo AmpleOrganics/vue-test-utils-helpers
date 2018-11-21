@@ -1,0 +1,7 @@
+pipeline:
+  test:
+    image: node:8.12.0-alpine
+    commands:
+      - yarn install
+      - yarn test
+      - yarn eslint src tests --no-fix
