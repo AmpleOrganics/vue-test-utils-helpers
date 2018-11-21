@@ -6,7 +6,8 @@ describe('toHaveRouteName', () => {
     'mockStoreActionsAndGetters',
     'toHaveRouteName',
     'toHaveBeenNthCalledWithPayload',
-    'toHaveBeenLastCalledWithPayload'
+    'toHaveBeenLastCalledWithPayload',
+    'createStubbedComponent'
   ]
 
   it('should export all helpers', () => {
