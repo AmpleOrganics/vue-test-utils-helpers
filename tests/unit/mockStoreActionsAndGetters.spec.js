@@ -33,6 +33,18 @@ describe('mockStoreActionsAndGetters', () => {
           return Promise.resolve([])
         }
       }
+    },
+    onlyActions: {
+      actions: {
+        onlyAction () {
+          return Promise.resolve([])
+        }
+      }
+    },
+    onlyGetters: {
+      getters: {
+        onlyGetter: () => {}
+      }
     }
   }
 
@@ -42,10 +54,12 @@ describe('mockStoreActionsAndGetters', () => {
     }
     const expectedActions = {
       'getUsers': jestFn().mockResolvedValue(),
+      'onlyAction': jestFn().mockResolvedValue(),
       'todos/getTodos': jestFn().mockResolvedValue()
     }
     const expectedGetters = {
       'users': mockResolvedValue,
+      'onlyGetter': mockResolvedValue,
       'todos/todos': mockResolvedValue,
       'todos/archivedTodos': foo
     }
@@ -56,7 +70,7 @@ describe('mockStoreActionsAndGetters', () => {
       jestFn
     })
 
-    expect(actions).toMatchObject(expectedActions)
-    expect(getters).toMatchObject(expectedGetters)
+    expect(getters).toEqual(expectedGetters)
+    expect(actions).toEqual(expectedActions)
   })
 })
