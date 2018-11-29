@@ -1,6 +1,16 @@
 # Vue Test Utils Helpers
 Helper functions that make unit testing easier for VueJs applications.
 
+## Install
+
+add `"vue-test-utils-helpers": "git+ssh://git@github.com/AmpleOrganics/vue-test-utils-helpers.git#1.0.3`" to your devDependencies of your `package.json`
+
+note: replace 1.0.3 with whatever version you want to install, or leave it blank to always have the latest
+
+and run
+
+`npm i` or `yarn` to install the package
+
 ## Vue-router mocking helpers
 ### mockRouterComponents
 Mocks all components in routes array and makes them available for assertion.
@@ -21,7 +31,7 @@ expect(wrapper).toHaveRouteName('home')
 ---
 ## Vuex store actions and getters mocking helper
 ### mockStoreActionsAndGetters
-Mocks Vuex store `actions` and `getters` 
+Mocks Vuex store `actions` and `getters`
 
 ```javascript
 const { actions, getters } = mockStoreActionsAndGetters({ modules, mockedGetters: {}, jestFn: jest.fn })
@@ -31,7 +41,7 @@ expect(getters.someGetter).toHaveBeenCalled()
 ```
 
 ### toHaveBeenLastCalledWithPayload
-Jest matcher that mathces the payload of last call to a mocked function with the expected payload. Makes it easier to assert on mocked store action.
+Jest matcher that matches the payload of last call to a mocked function with the expected payload. Makes it easier to assert on mocked store action.
 
 ```javascript
 expect(actions.someAction).toHaveBeenLastCalledWithPayload(expected)
@@ -50,7 +60,7 @@ expect(actions.someAction).toHaveBeenNthCalledWithPayload(expected, index)
 Create stubbed component using `createStubbedComponent` that can be used with `mount` method in vue-test-utils.
 
 ```javascript
-const component = createStubbedComponent()    
+const component = createStubbedComponent()
 
 const component = createStubbedComponent({ slots: ['default', 'slot1'] })
 
@@ -66,7 +76,7 @@ const component = createStubbedComponent({
 ```
 
 ```javascript
-/* 
+/*
 vue-test-utils - emit event from stubbed component so that component under test can react to emitted event
 */
 const wrapper = mount(Component, {
