@@ -4,6 +4,7 @@ describe('toHaveRouteName', () => {
   const expectedHelpers = [
     'mockRouterComponents',
     'mockStoreActionsAndGetters',
+    'mockStoreMutations',
     'toHaveRouteName',
     'toHaveBeenNthCalledWithPayload',
     'toHaveBeenLastCalledWithPayload',
