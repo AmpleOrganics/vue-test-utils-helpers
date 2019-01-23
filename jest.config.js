@@ -13,7 +13,7 @@ module.exports = {
   coverageDirectory: "coverage",
   coverageReporters: ['json', 'html'],
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.{js}',
+    '<rootDir>/src/**/*.{js, vue}',
   ],
   coverageThreshold: {
     global: {
