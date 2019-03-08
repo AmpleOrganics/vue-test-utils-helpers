@@ -45,6 +45,34 @@ describe('mockStoreActionsAndGetters', () => {
       getters: {
         onlyGetter: () => {}
       }
+    },
+    parent: {
+      namespaced: true,
+      getters: {
+        parentGetter: () => {}
+      },
+      actions: {
+        parentAction: () => Promise.resolve([])
+      },
+      modules: {
+        child: {
+          namespaced: true,
+          getters: {
+            childGetter: () => {}
+          },
+          actions: {
+            childAction: () => Promise.resolve([])
+          }
+        },
+        nonNamespaced: {
+          getters: {
+            nonNamespacedGetter: () => {}
+          },
+          actions: {
+            nonNamespacedAction: () => Promise.resolve([])
+          }
+        }
+      }
     }
   }
 
@@ -55,13 +83,19 @@ describe('mockStoreActionsAndGetters', () => {
     const expectedActions = {
       'getUsers': jestFn().mockResolvedValue(),
       'onlyAction': jestFn().mockResolvedValue(),
-      'todos/getTodos': jestFn().mockResolvedValue()
+      'todos/getTodos': jestFn().mockResolvedValue(),
+      'parent/parentAction': jestFn().mockResolvedValue(),
+      'parent/child/childAction': jestFn().mockResolvedValue(),
+      'parent/nonNamespacedAction': jestFn().mockResolvedValue()
     }
     const expectedGetters = {
       'users': mockResolvedValue,
       'onlyGetter': mockResolvedValue,
       'todos/todos': mockResolvedValue,
-      'todos/archivedTodos': foo
+      'todos/archivedTodos': foo,
+      'parent/parentGetter': mockResolvedValue,
+      'parent/child/childGetter': mockResolvedValue,
+      'parent/nonNamespacedGetter': mockResolvedValue
     }
 
     const { actions, getters } = mockStoreActionsAndGetters({
