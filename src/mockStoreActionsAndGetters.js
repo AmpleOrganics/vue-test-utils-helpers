@@ -12,6 +12,17 @@ function mockStoreActionsAndGetters ({
 
     mockStoreActions(moduleKey, moduleValue, actionsDictionary, isNamespaced, jestFn)
     mockStoreGetters(moduleKey, moduleValue, gettersDictionary, isNamespaced, jestFn, mockedGetters)
+
+    if (moduleValue.modules) {
+      const results = mockStoreActionsAndGetters({ modules: moduleValue.modules, mockedGetters, jestFn })
+      Object.keys(results.actions).forEach(actionKey => {
+        actionsDictionary[`${moduleKey}/${actionKey}`] = results.actions[actionKey]
+      })
+
+      Object.keys(results.getters).forEach(getterKey => {
+        gettersDictionary[`${moduleKey}/${getterKey}`] = results.getters[getterKey]
+      })
+    }
   })
 
   return {
