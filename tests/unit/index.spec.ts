@@ -1,4 +1,4 @@
-import * as helpers from '../../src/'
+import * as helpers from '../../src'
 
 describe('toHaveRouteName', () => {
   const expectedHelpers = [

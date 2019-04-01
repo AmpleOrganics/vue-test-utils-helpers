@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src tests --fix",
-    "build": "babel src --out-dir lib"
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc -d --declarationDir lib --emitDeclarationOnly",
+    "build:js": "babel --extensions '.ts' src --out-dir lib --source-maps inline"
   },
   "keywords": [
     "vue",
@@ -19,6 +21,8 @@
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.11",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -29,7 +33,9 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.12.1",
+    "ts-jest": "^24.0.1",
+    "typescript": "^3.4.1"
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0"

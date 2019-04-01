@@ -1,19 +1,19 @@
 module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   clearMocks: true,
   moduleFileExtensions: [
-    "js",
+    'ts',
+    'js'
   ],
   testMatch: [
     '**/tests/unit/**/*.spec.(js|ts)|**/__tests__/*.(js|ts)'
   ],
-  transform: {
-    '^.+\\.js$': 'babel-jest'
-  },
   collectCoverage: true,
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
   coverageReporters: ['json', 'html'],
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.{js}',
+    '<rootDir>/src/**/*.ts'
   ],
   coverageThreshold: {
     global: {
@@ -23,4 +23,4 @@ module.exports = {
       statements: 100
     }
   }
-};
+}
