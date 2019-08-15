@@ -3,7 +3,15 @@ Helper functions that make unit testing easier for VueJs applications.
 
 ## Install
 
-add `"vue-test-utils-helpers": "git+ssh://git@github.com/AmpleOrganics/vue-test-utils-helpers.git#1.0.3`" to your devDependencies of your `package.json`
+add one of the following to the devDependencies of your `package.json`:
+
+```
+"vue-test-utils-helpers": "git+ssh://git@github.com/AmpleOrganics/vue-test-utils-helpers.git#1.0.3"
+```
+or
+```
+"vue-test-utils-helpers": "git+https://github.com/AmpleOrganics/vue-test-utils-helpers.git#1.0.3"
+```
 
 note: replace 1.0.3 with whatever version you want to install, or leave it blank to always have the latest
 
